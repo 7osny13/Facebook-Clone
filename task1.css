@@ -1,0 +1,33 @@
+
+ .close {
+	position: absolute;
+	top: 0;
+	right: 10px;
+	font-size: 42px;
+	color: #333;
+	transform: rotate(45deg);
+	cursor: pointer;
+	
+}
+.bg-modal {
+	background-color: rgba(173, 163, 157, 0.8);
+	width: 50%;
+	height: 50%;
+	position: absolute;
+	top: 0;
+	justify-content: center;
+	align-items: center;
+    display: flex;
+}
+.modal-contents {
+	height: 300px;
+	width: 400px;
+	padding: 20px;
+	position: relative;
+	border-radius: 4px;
+    background-size: cover;
+    background-image: url("kid1.jpg");
+
+    
+}
+

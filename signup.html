@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up</title>
+    <script src="https://kit.fontawesome.com/656b05a79d.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Radio+Canada:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+
+    <link rel="stylesheet" href="signup.css">
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="header">
+            <img src="./images/facebooklogo.png" alt="">
+        </div>
+        <div class="mainbody">
+            <div class="form">
+                <div class="formheader">
+                    <div class="createtext">Create a new acoount</div>
+                    <div class="quicktext">It's quick and easy.</div>
+                    <span style="color:red"></span>
+                </div>
+                <div class="lineone">
+                    <hr>
+                </div>
+                <div class="forminputs">
+                    <form  method="post" onsubmit="checkvalidation(event)">
+                        <div class="name">
+                            <input type="text" name="" class="firstname" required placeholder="first name" id="fname">
+                            <input type="text" name="" class="lastname" placeholder="surname" id="lname">
+                        </div>
+                        <input type="email" name="" id="email" class="email" required placeholder="enter your email">
+                        <span id="span3" style="color:red; margin-left: 20px;"></span>
+                        <input type="password" name="" id="psw" class="password" required placeholder="enter password">
+                        <span id="span2" style="color:red; margin-left: 20px;"></span>
+                        <label for="" class="datelabel">Date of birth</label>
+                        <div class="selects">
+                            <select name="" id="day"></select>
+                            <select name="" id="month"></select>
+                            <select name="" id="year"></select>
+                        </div>
+                        <label for="" class="genderlabel">Gender</label>
+                        <div class="gender">
+                            <div class="male">
+                                <span>Male</span>
+                                <input type="radio" name="gender" id="malerad">
+                            </div>
+                            <div class="female">
+                                <span>Female</span>
+                                <input type="radio" name="gender" id="femalerad">
+                            </div>
+                            <div class="custom">
+                                <span>custom</span>
+                                <input type="radio" name="gender" id="customrad">
+                            </div>
+                        </div>
+                        <div class="terms">
+                            <p>By clicking Sign Up, you agree to our Terms, Data Policy and Cookie Policy. You may
+                                receive SMS notifications from us and can opt out at any time.</p>
+                        </div>
+                        <input type="submit" class="signupbtn" value="Sign up" id="signupbtn" onmouseout="savedata()">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var selectele = document.getElementById("day")
+        var opt;
+        for (var i = 1; i < 32; i++) {
+
+            opt = document.createElement("option");
+            opt.setAttribute('value', i)
+            opt.appendChild(document.createTextNode(i))
+            selectele.appendChild(opt);
+
+
+        }
+
+        // create months options
+        var months = [{
+                value: '1',
+                text: "Jan"
+            },
+            {
+                value: '2',
+                text: "Feb"
+            },
+            {
+                value: '3',
+                text: "Mar"
+            },
+            {
+                value: '4',
+                text: "Apr"
+            },
+            {
+                value: '5',
+                text: "May"
+            },
+            {
+                value: '6',
+                text: "Jun"
+            },
+            {
+                value: '7',
+                text: "Jul"
+            },
+            {
+                value: '8',
+                text: "Aug"
+            },
+            {
+                value: '9',
+                text: "Sep"
+            },
+            {
+                value: '10',
+                text: "Oct"
+            },
+            {
+                value: '11',
+                text: "Nov"
+            },
+            {
+                value: '12',
+                text: "Dec"
+            }
+        ];
+
+        var selectmonth = document.getElementById("month")
+        var monthopt;
+
+        for (var i = 0; i < months.length; i++) {
+            monthopt = document.createElement("option")
+            monthopt.setAttribute('value', months[i].value);
+            monthopt.appendChild(document.createTextNode(months[i].text))
+            selectmonth.appendChild(monthopt)
+        }
+
+        // create year options
+
+        var years = [{
+                value: '2020',
+                text: '2020'
+            },
+            {
+                value: '2019',
+                text: '2019'
+            },
+            {
+                value: '2018',
+                text: '2018'
+            },
+            {
+                value: '2017',
+                text: '2017'
+            },
+            {
+                value: '2016',
+                text: '2016'
+            },
+            {
+                value: '2015',
+                text: '2015'
+            },
+            {
+                value: '2014',
+                text: '2014'
+            },
+            {
+                value: '2013',
+                text: '2013'
+            },
+            {
+                value: '2012',
+                text: '2012'
+            },
+            {
+                value: '2011',
+                text: '2011'
+            },
+            {
+                value: '2010',
+                text: '2010'
+            },
+            {
+                value: '2009',
+                text: '2009'
+            },
+            {
+                value: '2008',
+                text: '2008'
+            },
+            {
+                value: '2007',
+                text: '2007'
+            },
+            {
+                value: '2006',
+                text: '2006'
+            },
+            {
+                value: '2005',
+                text: '2005'
+            },
+            {
+                value: '2004',
+                text: '2004'
+            },
+            {
+                value: '2003',
+                text: '2003'
+            },
+            {
+                value: '2002',
+                text: '2002'
+            },
+            {
+                value: '2001',
+                text: '2001'
+            },
+            {
+                value: '2000',
+                text: '2000'
+            }
+        ]
+
+        var selectyear = document.getElementById("year");
+        var yearopt;
+
+        for (var i = 0; i < years.length; i++) {
+            yearopt = document.createElement("option");
+            yearopt.setAttribute('value', years[0].value);
+            yearopt.appendChild(document.createTextNode(years[i].text))
+            selectyear.appendChild(yearopt)
+        }
+
+        //check name  
+        var check1 = 0;
+        var check2 = 0;
+        var check3 = 0;
+        var check4 = 0;
+        document.getElementById("lname").onmouseout = function () {
+            event.preventDefault();
+            var fname = document.getElementById("fname").value;
+            var lname = document.getElementById("lname").value;
+
+            if (fname.length < 3 || lname.length < 3) {
+                document.querySelector("span").innerHTML = "name must be more than 3 letters";
+
+                check1 = 0;
+
+            } else {
+                document.querySelector("span").innerHTML = "";
+                check1 = 1;
+
+            }
+
+        }
+
+        //pass
+        document.getElementById("psw").onmouseout = function () {
+            event.preventDefault();
+            var pass = document.getElementById("psw").value;
+
+            //  var regex =/^([a-zA-Z]{3,})(!|@|#|$|%|&|*){1,}([a-zA-Z]{3,})$/;
+            var regex = /^([a-zA-Z]{3,})([0-9]{3,})$/;
+
+            var isValid = regex.test(pass)
+            if (isValid == false) {
+                document.getElementById("span2").innerHTML =
+                "password must have more than 3 letters , 3 numbers   ";
+                check2 = 0;
+            } else {
+                document.getElementById("span2").innerHTML = "";
+                check2 = 1;
+            }
+
+
+        }
+
+        //email
+        document.getElementById("email").onmouseout = function () {
+            event.preventDefault();
+            var em = document.getElementById("email").value;
+            var rege = /^([a-zA-Z]{3,})(@){1}([a-zA-Z]{3,})(.com|.org){1}$/;
+            var isVali = rege.test(em)
+            console.log(isVali)
+
+            if (isVali == false) {
+                document.getElementById("span3").innerHTML = "write correct email   ";
+                check3 = 0;
+            } else {
+                document.getElementById("span3").innerHTML = "";
+                check3 = 1;
+            }
+
+
+        }
+
+
+
+
+
+        // save email  to local storage
+        var email, psw, fname, lname;
+        var user_data = new Array();
+        function savedata() {
+            event.preventDefault();
+            //     var email = document.getElementById("email").value
+            //     localStorage.setItem("email" , email)
+            //     var fname = document.getElementById("fname").value
+            //     localStorage.setItem("fname" , fname)
+            //     var lname = document.getElementById("email").value
+            //     localStorage.setItem("lname" , lname)
+            //     var password = document.getElementById("password").value;
+            //     localStorage.setItem("password" , password)
+
+            // }
+
+
+
+        
+            email = document.getElementById("email").value;
+            fname = document.getElementById("fname").value;
+            lname = document.getElementById("lname").value;
+            psw = document.getElementById("psw").value;
+
+           
+            user_data = JSON.parse(localStorage.getItem("users")) ? JSON.parse(localStorage.getItem("users")) : []
+            if (user_data.some((v) => {
+                    return v.email == email
+                })
+                // (check1 == 1) || (check2 == 1) || (check3 == 1)
+                ){
+                alert("duplicate email , An error occurred. Please try again.");
+            check4=0;
+            } else {
+                user_data.push({
+                    "fname": fname,
+                    "lname": lname,
+                    "email": email,
+                    "psw": psw,
+                })
+                localStorage.setItem("users", JSON.stringify(user_data));
+                check4=1;
+                window.location.href = "login.html";
+                event.submit();
+            }
+        }
+
+        //validation
+        function checkvalidation(e) {
+
+            if ((check1 == 1) || (check2 == 1) || (check3 == 1)|| (check4 == 1) ){
+                e.preventDefault();
+                document.querySelector("span")[0].innerHTML = "An error occurred. Please try again.";
+                localStorage.removeItem("users", JSON.stringify(user_data));
+                return false;
+
+            } else {
+                e.submit();
+                window.location.href = "login.html";
+                return true;
+            }
+
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<html>
+
+<head>
+  <title>
+    Login
+  </title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+  <div class="right">
+    <!-- <img src="face.png" alt="" style="width: 250px; height: 250px;"> -->
+    <h1>facebook</h1>
+    <p class="content">facebook gives you the ability to<br> connect with people and share what <br>you want with them.
+    </p>
+  </div>
+
+  <div class="container" style="float: right;">
+
+    <form >
+
+      <div class="form">
+        <input type="email" class="emailform" id="email" placeholder="e-mail or phone number" name="email"
+          onfocus="this.style.border='1px solid #1877f2'" onblur="this.style.border='1px solid #dddfe2'">
+      </div>
+
+      <div class="form">
+        <input type="password" class="passform" id="psw" placeholder="password" name="password"
+          onfocus="this.style.border='1px solid #1877f2'" onblur="this.style.border='1px solid #dddfe2'">
+      </div>
+      
+      <input type="submit" value="Log in"  class="buttons" onclick="savedata()" placeholder="Log in">
+
+      <p style="margin-left: 50px; color:#1877f2">have you forgotten the password?</p>
+      <div style="margin: 15px; align-items: center; border-bottom: 1px solid #dadde1;"></div>
+
+      <input type="submit" value="Create a new account" class="buttons" 
+        style="background-color: #42b72a; width:200px; margin-left: 60px; border: 1px solid #42b72a;">
+    </form>
+  </div>
+  <div style="clear: both;"></div>
+  <div style="margin-top: 200px; margin-left: 220px;">
+  <p><a href="signup.html">create a page </a>for a famous character, brand, or business.</p>
+</div>
+<script>
+  let fname=localStorage.getItem('fname')?localStorage.getItem('fname'):''
+         console.log(fname);
+         if(fname!='')
+         {
+           window.location.href="index.html";
+         }
+ 
+ 
+         document.forms[0].onsubmit =function saveData(e)
+ {
+   event.preventDefault();
+ let email,psw;
+ email=document.getElementById("email").value;
+ 
+ psw=document.getElementById("psw").value;
+ 
+ let user_data=new Array();
+ user_data=JSON.parse(localStorage.getItem("users"))?JSON.parse(localStorage.getItem("users")):[]
+ if(user_data.some((v)=>{return v.email==email && v.psw==psw}))
+ {
+   alert("Welcome");
+   console.log(user_data)
+   let user=user_data.filter((v)=>{return v.email==email && v.psw==psw})[0]
+  localStorage.setItem('fname',user.fname);
+  localStorage.setItem('email',user.email);
+   window.location.href="index.html"
+   return true;
+ }
+ else
+ {
+  
+   alert("the email or phone number you entered is not linked to an account.");
+   return false;
+ }
+ 
+ }
+ </script>
+</body>
+
+
+</html>

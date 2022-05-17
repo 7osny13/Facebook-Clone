@@ -1,0 +1,86 @@
+* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
+    }
+    
+    body {
+        background-color: #f0f2f5;
+    }
+    
+    .right {
+        float: right;
+        width: 50%;
+        margin-top: 200px;
+    }
+    
+    h1 {
+        color: #1877f2;
+        font-weight: bold;
+        margin-left: 190px;
+        font-size: 60px;
+    }
+    
+    .content {
+        font-size: 25px;
+        color: black;
+        width: auto;
+        line-height: 32px;
+        padding: auto;
+    }
+    
+    .container {
+    
+        top: 50%;
+        left: 30%;
+        position: absolute;
+        border-radius: 20px;
+        box-shadow: 0 0 10px white;
+        transform: translate(-50%, -50%);
+        background: white;
+        width: fit-content;
+        box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+    }
+    
+    
+    .emailform {
+        border: 1px solid #dddfe2;
+        border-radius: 10px;
+        height: 50px;
+        margin-bottom: 2px;
+    }
+    
+    .passform {
+        border: 1px solid #dddfe2;
+        border-radius: 10px;
+        height: 50px;
+    }
+    
+    input {
+        outline: none;
+        text-align: center;
+        width: 300px;
+        border: none;
+        font-size: 15px;
+        border-radius: 20px;
+        padding: 10px;
+        margin: 25px;
+    
+    }
+    
+    .buttons {
+        text-align: center;
+        border-radius: 10px;
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+        background-color: #1877f2;
+        border: 1px solid #1877f2;
+        height: 50px;
+        cursor: pointer;
+    }
+    .buttons :hover{
+        background-color: #3d526d;
+
+    }

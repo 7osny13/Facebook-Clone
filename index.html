@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+        integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="fontawesome-free-6.1.1-web/css/all.min.css" />
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="task1.css">
+    <link rel="stylesheet" href="task2.css">
+
+    <title>facebook</title>
+</head>
+
+<body>
+    <nav>
+        <div class="nav-left">
+           
+
+            <i class="fa-brands fa-facebook-square" style="font-size: 25px;" onclick="loadpage()"></i>
+            <input type="text" placeholder="Search ..">
+        </div>
+
+        <div class="nav-middle">
+            <a href="#" class="active" onclick="loadpage() ">
+                <i id="home" class="fa fa-home"></i>
+            </a>
+
+
+            <a href="#" class="" id="addFriend" onclick="addFriends()">
+                <i id="user-friend" class="fa fa-user-friends"></i>
+            </a>
+
+            <a href="videos.html">
+                <i class="fa fa-play-circle"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa fa-users"></i>
+            </a>
+        </div>
+
+        <div class="nav-right">
+            <span class="profile"></span>
+
+            <a href="#">
+                <i class="fa fa-bell"></i>
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-right-from-bracket" onclick="LogOut();"></i>
+            </a>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <div class="left-panel">
+            <ul>
+                <li>
+                    <span class="profile">                     
+                    </span>
+                    <p>
+                        <script>
+                            document.write(localStorage.getItem('fname'));
+                        </script>
+                    </p>
+                </li>
+                <li>
+                    <i class="fa fa-user-friends"></i>
+                    <p>Friends</p>
+                </li>
+                <li>
+                    <a href="videos.html">
+                        <i class="fa fa-play-circle"></i>
+                    </a>
+                    <p>Videos</p>
+                </a>
+                </li>
+                <li>
+                    <i class="fa fa-flag"></i>
+                    <p>Pages</p>
+                </li>
+                <li>
+                    <i class="fa fa-users"></i>
+                    <p>Groups</p>
+                </li>
+                <li>
+                    <i class="fa fa-bookmark"></i>
+                    <p>Bookmark</p>
+                </li>
+                <li>
+                    <i class="fab fa-facebook-messenger"></i>
+                    <p>Inbox</p>
+                </li>
+                <li>
+                    <i class="fas fa-calendar-week"></i>
+                    <p>Events</p>
+                </li>
+                <li>
+                    <i class="fa fa-bullhorn"></i>
+                    <p>Ads</p>
+                </li>
+                <li>
+                    <i class="fas fa-hands-helping"></i>
+                    <p>Offers</p>
+                </li>
+                <li>
+                    <i class="fas fa-briefcase"></i>
+                    <p>Jobs</p>
+                </li>
+                <li>
+                    <i class="fa fa-star"></i>
+                    <p>Favourites</p>
+                </li>
+            </ul>
+
+            <div class="footer-links">
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+                <a href="#">Advance</a>
+                <a href="#">More</a>
+            </div>
+        </div>
+
+
+        <div class="middle-panel">
+
+            <div class="story-section">
+
+                <div class="story create">
+                    <div class="dp-image">
+                        <img src="./media/dp.jpg" alt="Profile pic">
+                    </div>
+                    <span class="dp-container">
+                        <i class="fa fa-plus"></i>
+                    </span>
+                    <span class="name">Create Story</span>
+                </div>
+
+
+                <div class="story">
+                    <img id="one" src="./media//model.jpg" alt="Story image" onclick="openvideo(this)">
+                    <div class="dp-container">
+                        <img src="./media/girl.jpg" alt="">
+                    </div>
+                    <p class="name">mohamed abotrika</p>
+                </div>
+
+                <div class="story">
+                    <img id="two" src="./media/boy.jpg" alt="Story image" onclick="openvideo(this)">
+                    <span class="dp-container">
+                        <img src="./media/dp.jpg" alt="Profile pic">
+                    </span>
+                    <span class="name">Tamer hosny</span>
+                </div>
+
+                <div class="story">
+                    <img id="three" src="./media/mountains.jpg" alt="Story image" onclick="openvideo(this)">
+                    <span class="dp-container">
+                        <img src="./media/boy.jpg" alt="Profile pic">
+                    </span>
+                    <span class="name">Adel emam</span>
+                </div>
+
+                <div class="story">
+                    <img id="four" src="./media/shoes.jpg" alt="Story image" onclick="openvideo(this)">
+                    <span class="dp-container">
+                        <img src="./media/model.jpg" alt="Profile pic">
+                    </span>
+                    <span class="name">Abo Trika</span>
+                </div>
+                <div class="overlay">
+                    <div class="popup">
+                        <div class="videoone">
+                            <video id="storyone" src="" onclick="playvid()" ondblclick="pausevid()">
+
+                            </video>
+                        </div>
+                        <div onclick="CloseModal()" style="color: white;  cursor: pointer; ">&#10006;</div>
+                        <!-- Shows Close Icon -->
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="post create">
+                <div class="post-top">
+                    <div class="dp">
+                        <img src="./media/dp.jpg" alt="">
+                    </div>
+                    <input type="text" id="id" placeholder="What's on your mind ?" />
+
+
+
+                </div>
+
+                <div class="post-bottom" id="mainpost">
+                    <div class="action">
+                        <i class="fa fa-video"></i>
+                        <span id="video">Live video</span>
+                    </div>
+                    <div class="action" onclick="uploadimage()">
+                        <i class="fa fa-image"></i>
+                        <span id="upload" onclick="uploadimage()">Photo/Video</span>
+                    </div>
+                    <div class="action" onclick="savedata()" id="pub">
+                        <i class="fa-solid fa-arrow-down-to-arc"></i>
+                        <span>Publish</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-modal" id="popupload" style="display: none;">
+                <div class="modal-contents">
+                    <div class="close" id="test">+</div><br><br><br>
+                    <form>
+                        <input type="file" onchange="preview()" id="file" accept="image/*">
+                        <img id="frame" src="" width="100px" height="100px" />
+                    </form>
+
+                    <i class="fas fa-save" style="font: 30px; color: red;" id="save"></i>
+
+                </div>
+            </div>
+
+
+            <!-- --------------------------------0--------------------------------------- -->
+
+            <div id="postnew">
+
+            </div>
+            <!-- ---------------------------------------- -->
+
+            <!-- --------------------------------1--------------------------------------- -->
+
+            <div class="post" id="hdn" style="display: none;">
+                <div class="post-top">
+                    <div class="dp">
+                        <img src="./media/dp.jpg" alt="">
+                    </div>
+                    <div class="post-info">
+                        <p class="name" id="nameuser2">
+                        </p>
+                        <span class="time" id="dateuser2" style="color: black;">
+
+                        </span>
+                    </div>
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+
+                <div class="post-content" id="postuser2">
+
+                </div>
+
+                <div class="post-bottom">
+                    <div class="action">
+                        <i class="far fa-thumbs-up"></i>
+                        <span>Like</span>
+                    </div>
+                    <div class="action">
+                        <i class="far fa-comment"></i>
+                        <span>Comment</span>
+                    </div>
+                    <div class="action">
+                        <i class="fa fa-share"></i>
+                        <span>Share</span>
+                    </div>
+                </div>
+            </div>
+            <!-- ----------------------------------------------------------------------- -->
+            <!-- --------------------------------2--------------------------------------- -->
+
+            <div class="post" id="hdn2" style="display: none;">
+                <div class="post-top">
+                    <div class="dp">
+                        <img src="./media/dp.jpg" alt="">
+                    </div>
+                    <div class="post-info">
+                        <p class="name" id="nameuser3">
+                        </p>
+                        <span class="time" id="dateuser3" style="color: black;">
+
+                        </span>
+                    </div>
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+
+                <div class="post-content" id="postuser3">
+                    <img src="#" alt="" style="width: 400px;height: 200px;" id="img" accept="image/*">
+                </div>
+
+                <div class="post-bottom">
+                    <div class="action">
+                        <i class="far fa-thumbs-up"></i>
+                        <span>Like</span>
+                    </div>
+                    <div class="action">
+                        <i class="far fa-comment"></i>
+                        <span>Comment</span>
+                    </div>
+                    <div class="action">
+                        <i class="fa fa-share"></i>
+                        <span>Share</span>
+                    </div>
+                </div>
+            </div>
+            <!-- ----------------------------------------------------------------------- -->
+            <div class="post">
+                <div class="post-top">
+                    <div class="dp">
+                        <img src="./media/girl.jpg" alt="">
+                    </div>
+                    <div class="post-info">
+                        <p class="name">Amir eid</p>
+                        <span class="time">12 hrs ago</span>
+                    </div>
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+
+                <div class="post-content">
+                    Roses are red <br>
+                    Violets are blue 😏 <br>
+                  
+                </div>
+
+                <div class="post-bottom">
+                    <div class="action" onclick="changecolor(this)" ondblclick="defaultcolor(this)">
+                        <i class="far fa-thumbs-up"></i>
+                        <span>Like</span>
+                    </div>
+                    <div class="action">
+                        <i class="far fa-comment"></i>
+                        <span>Comment</span>
+                    </div>
+                    <div class="action">
+                        <i class="fa fa-share"></i>
+                        <span>Share</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="post">
+                <div class="post-top">
+                    <div class="dp">
+                        <img src="./media/dp.jpg" alt="">
+                    </div>
+                    <div class="post-info">
+                        <p class="name">Adel Emam</p>
+                        <span class="time">2 days ago</span>
+                    </div>
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+
+                <div class="post-content">
+                    Mountains are so cool
+                    <img src="media/mountains.jpg" />
+                </div>
+
+                <div class="post-bottom">
+                    <div class="action" onclick="changecolor(this)" ondblclick="defaultcolor(this)">
+                        <i class="far fa-thumbs-up"></i>
+                        <span>Like</span>
+                    </div>
+                    <div class="action">
+                        <i class="far fa-comment"></i>
+                        <span>Comment</span>
+                    </div>
+                    <div class="action">
+                        <i class="fa fa-share"></i>
+                        <span>Share</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="post">
+                <div class="post-top">
+                    <div class="dp">
+                        <img src="./media/boy.jpg" alt="">
+                    </div>
+                    <div class="post-info">
+                        <p class="name">Tamer hosny</p>
+                        <span class="time">1 week ago</span>
+                    </div>
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+                <div class="post-content">
+                    Happy birthday dear
+                    <img src="./media/girl_with_light.jpg" alt="Mountains">
+                </div>
+                <div class="post-bottom">
+                    <div class="action" onclick="changecolor(this)" ondblclick="defaultcolor(this)">
+                        <i class="far fa-thumbs-up"></i>
+                        <span>Like</span>
+                    </div>
+                    <div class="action">
+                        <i class="far fa-comment"></i>
+                        <span>Comment</span>
+                    </div>
+                    <div class="action">
+                        <i class="fa fa-share"></i>
+                        <span>Share</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="post">
+                <div class="post-top">
+                    <div class="dp">
+                        <img src="./media/model.jpg" alt="">
+                    </div>
+                    <div class="post-info">
+                        <p class="name">Mohamed abo trika</p>
+                        <span class="time">5 mins ago</span>
+                    </div>
+                    <i class="fas fa-ellipsis-h"></i>
+                </div>
+                <div class="post-content">
+                    Hey, everybody! My new shoes are here
+                    <img src="./media/shoes.jpg" alt="Shoes">
+                </div>
+                <div class="post-bottom">
+                    <div class="action" onclick="changecolor(this)" ondblclick="defaultcolor(this)">
+                        <i class="far fa-thumbs-up"></i>
+                        <span>Like</span>
+                    </div>
+                    <div class="action">
+                        <i class="far fa-comment"></i>
+                        <span>Comment</span>
+                    </div>
+                    <div class="action">
+                        <i class="fa fa-share"></i>
+                        <span>Share</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="right-panel">
+            <div class="pages-section">
+                <h4>Your pages</h4>
+                <a class='page' href="#">
+                    <div class="dp">
+                        <img src="./media/logo.png" alt="">
+                    </div>
+                    <p class="name">Profile</p>
+                </a>
+
+                <!-- <a class='page' href="#">
+                    <div class="dp">
+                        <img src="./media/dp.jpg" alt="">
+                    </div>
+                    <p class="name"></p>
+                </a> -->
+            </div>
+
+            <div class="friends-section" id="friends-section">
+                <h4>Friends</h4>
+                <a class='friend' href="#" onclick="openmessagebox(this)">
+                    <div class="dp">
+                        <img src="./media/dp.jpg" alt="">
+                    </div>
+                    <p class="name">Adel Emam</p>
+                </a>
+
+                <a class='friend' href="#" onclick="openmessagebox(this)">
+                    <div class="dp">
+                        <img src="./media/shoes.jpg" alt="">
+                    </div>
+                    <p class="name">Ahmed</p>
+                </a>
+
+                <a class="friend" href="#" onclick="openmessagebox(this)">
+                    <div class="dp">
+                        <img src="./media/boy.jpg" alt="">
+                    </div>
+                    <p class="name">Tamer hosny</p>
+                </a>
+
+                <a class="friend" href="#" onclick="openmessagebox(this)">
+                    <div class="dp">
+                        <img src="./media/model.jpg" alt="">
+                    </div>
+                    <p class="name">Abo Trika</p>
+                </a>
+
+                <a class="friend" href="#" onclick="openmessagebox(this)">
+                    <div class="dp">
+                        <img src="./media/boy.jpg" alt="">
+                    </div>
+                    <p class="name">Amir eid</p>
+                </a>
+
+                <a class="friend" href="#" onclick="openmessagebox(this)">
+                    <div class="dp">
+                        <img src="./media/dp.jpg" alt="">
+                    </div>
+                    <p class="name">Adel Emam</p>
+                </a>
+
+                <a class="friend" href="#" onclick="openmessagebox(this)">
+                    <div class="dp">
+                        <img src="./media/model.jpg" alt="">
+                    </div>
+                    <p class="name">Abo Trika</p>
+                </a>
+
+            </div>
+            <div class="messagesbox">
+                <div class="popupbox">
+                    <div class="box">
+                       <div></div>
+                    </div>
+                    <div onclick="Closemessagebox()" style="color: black;  cursor: pointer;  position: absolute; top: -20px; right: 0;">&#10006;</div>
+                    <!-- Shows Close Icon -->
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- -------------add friend-task2--------------- -->
+
+    <div id="request" class="bg-modal" style="display: none;">
+        <ul class="modal-contents">
+            <div class="close" id="test2">+</div><br><br><br>
+            <li class="none-bullet-list" style="margin-top: 50px;">Friends Requests</li>
+            <hr>
+            <li class="none-bullet-list" data-click="0">
+                <div id="01">
+                    <img src="./media/girl.jpg" alt="" class="avatar">
+                    <h5 style="    margin-left: 80px; margin-top: -60px; font-size: 20px;">Name</h5>
+                    <div style="margin: -8px; margin-left: -80px;" id="1">
+                        <p style="display: flex;">
+                            <a class="confirm" id="confirm" onclick="add(this)" data-click="0">Confirm</a>
+                            <a class="delete" onclick="dlt()">Delete</a>
+                        </p>
+                    </div>
+                </div>
+            </li>
+
+
+            <li class="none-bullet-list">
+                <div>
+                    <img src="./media/boy.jpg" alt="" class="avatar">
+                    <h5 style="    margin-left: 80px; margin-top: -60px; font-size: 20px;">Name</h5>
+                    <div style="margin: -8px; margin-left: -80px;" id="2">
+                        <p style="display: flex;">
+                            <a class="confirm" id="confirm" onclick="add(this)" data-click="0">Confirm</a>
+                            <a class="delete" onclick="dlt()">Delete</a>
+                        </p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+
+
+
+    <!-- ------------end---------------- -->
+
+    <script src="task1.js"></script>
+    <script src="task2.js"></script>
+</body>
+
+</html>
